@@ -5,5 +5,43 @@ const defaultState = {
 };
 
 export default function ExpenseReducer(state = defaultState, action) {
-  return state;
+  const { type, payload } = action;
+
+  switch (type) {
+    // Here in the case of the update description action
+    case 'UPDATE_EXPENSE_DESCRIPTION': {
+      return {
+        // with all previous state
+        ...state,
+        // but overwriting the description
+        description: payload.description
+      };
+    }
+
+    case 'UPDATE_EXPENSE_AMOUNT': {
+      return {
+        ...state,
+        amount: payload.amount
+      }
+    }
+
+    case 'ADD_EXPENSE': {
+      const { description, amount } = action.payload;
+      return {
+        description: '',
+        action: '',
+        lineItems: [
+          // here we have all the previous line items
+          ...state.lineItems,
+          // plus the new object being added
+          { description, amount }
+        ]
+      };
+    }
+
+
+    default: {
+      return state;
+    }
+  }
 }
