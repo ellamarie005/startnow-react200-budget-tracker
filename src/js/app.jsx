@@ -8,6 +8,7 @@ export default class App extends React.Component {
     return (
       <div className='container'>
         <div className='jumbotron' >
+        <div className='hello'>Hello World</div>
           <h1 className='display-3 text-center'>Budget Tracker</h1>
         </div>
         <div className='row'>
