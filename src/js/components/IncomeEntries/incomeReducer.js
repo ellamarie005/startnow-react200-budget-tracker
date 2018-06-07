@@ -22,7 +22,7 @@ export default function IncomeReducer(state = defaultState, action) {
       return {
         ...state,
         amount: payload.amount
-      }
+      };
     }
 
     case 'ADD_INCOME': {

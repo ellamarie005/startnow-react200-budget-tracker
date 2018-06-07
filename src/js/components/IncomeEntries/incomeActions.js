@@ -19,5 +19,5 @@ export function addIncome(description, amount) {
       description,
       amount: parseFloat(amount)
     }
-  }
+  };
 }
